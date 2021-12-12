@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/charactersFragment">
+
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.khedr.rickandmorty.presentation.characters.CharactersFragment"
+        android:label="CharactersFragment"
+        tools:layout="@layout/fragment_characters">
+        <action
+            android:id="@+id/action_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.khedr.rickandmorty.presentation.character_details.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment"
+        tools:layout="@layout/fragment_character_detail">
+        <argument
+            android:name="cachedCharacter"
+            app:argType="com.khedr.rickandmorty.domain.model.Character" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.character_details.CharacterDetailsFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_10sdp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_character"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/rick_icon"
+
+                    app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/rounded_corners"
+                    app:shapeAppearanceOverlay="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_character_name_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@drawable/stroke_rounded"
+                    android:backgroundTint="#D9D3D3"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_character" />
+
+                <TextView
+                    android:id="@+id/tv_character_status_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="Status: "
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_character_name_details" />
+
+                <TextView
+                    android:id="@+id/tv_character_gender_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="Gender: "
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_character_status_details" />
+
+                <TextView
+                    android:id="@+id/tv_character_species_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="Species: "
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_character_gender_details" />
+
+                <TextView
+                    android:id="@+id/tv_character_type_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="Type: "
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_character_species_details" />
+
+                <TextView
+                    android:id="@+id/tv_character_episode_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@drawable/stroke_rounded"
+                    android:backgroundTint="#D9D3D3"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:text="Appearance episodes"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_character_type_details" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_episodes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:overScrollMode="never"
+                    app:layout_constraintBottom_toTopOf="@+id/space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_character_episode_details" />
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progressBar_details"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/iv_character" />-->
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+</layout>
